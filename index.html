@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escaping the Reasoning Cliff | Research Paper</title>
+    <meta name="description"
+        content="Escaping the Reasoning Cliff: Loop-Driven Agentic Behavior Distillation for Self-Correcting Small Language Models (SLMs).">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <!-- Hero Section -->
+        <header class="hero" id="hero">
+            <h1>Escaping the Reasoning Cliff: Loop-Driven Agentic Behavior Distillation for Self-Correcting Small
+                Language Models</h1>
+
+            <div class="authors">
+                <span class="author">First A. Author<sup>1</sup></span>,
+                <span class="author">Second B. Author<sup>2</sup></span>,
+                <span class="author">Third C. Author, Jr.<sup>3</sup></span>
+            </div>
+
+            <div class="institutions">
+                <sup>1</sup>NIST, <sup>2</sup>Colorado State University, <sup>3</sup>University of Colorado
+            </div>
+
+            <div class="venue">Accepted to IEEE Access 2024</div>
+
+            <div class="hero-cover" style="margin: 2rem 0; text-align: center;">
+                <img src="hero_cover.png" alt="Hero Cover" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" onerror="this.outerHTML='<embed src=\'fig_labd_hero_compiled.pdf\' width=\'100%\' height=\'600px\' type=\'application/pdf\' style=\'border-radius: 8px; border: 1px solid var(--border-color);\'/>'">
+            </div>
+
+            <div class="action-buttons" id="action-links">
+                <a href="#" class="btn btn-primary" id="btn-pdf">
+                    <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Paper (PDF)
+                </a>
+                <a href="#" class="btn" id="btn-models">
+                    <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                        </path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                    8 LLM Models
+                </a>
+                <a href="#" class="btn" id="btn-dataset">
+                    <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                    </svg>
+                    Dataset
+                </a>
+                <a href="#" class="btn" id="btn-code">
+                    <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
+                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    Code
+                </a>
+            </div>
+        </header>
+
+        <!-- Abstract Section -->
+        <section class="section abstract-section" id="abstract">
+            <h2>Abstract</h2>
+            <div class="abstract-wrapper" style="position: relative; border-radius: 8px;">
+                <div class="coming-soon-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: rgba(255, 255, 255, 0.5); z-index: 10; backdrop-filter: blur(2px);">
+                    <span style="background: rgba(0, 0, 0, 0.85); color: #fff; padding: 12px 24px; font-size: 1.1rem; font-weight: 500; border-radius: 6px; font-family: 'Inter', sans-serif;">Abstract pending publication</span>
+                </div>
+                <div class="content" style="filter: blur(6px); user-select: none; pointer-events: none;">
+                <p>Small and mid-scale Language Models often struggle with iterative self-correction, exhibiting a
+                    pronounced reasoning cliff. While frontier models can recover from errors through prompting alone,
+                    smaller models frequently collapse into hallucination or fail to recover once an initial attempt is
+                    incorrect. We address this limitation with a two-stage post-training framework that teaches models
+                    not only what to generate, but how to behave within a closed-loop correction process.</p>
+                <p>We introduce <strong>Loop-Driven Agentic Behavior Distillation (LABD)</strong>, a supervised
+                    fine-tuning paradigm that distills self-correcting trajectories rather than isolated solutions. Our
+                    data generation employs failure-induced trajectory generation, where a weak model produces
+                    error-prone candidates that are subsequently repaired by a strong teacher under explicit execution
+                    feedback. This exposes models to planning, execution, observation, and recovery, enabling them to
+                    internalize structured agentic loops.</p>
+                <p>We further apply Group Relative Policy Optimization (GRPO) to stabilize and ground this behavior
+                    using execution-based rewards, unlocking highly robust error recovery in mid-to-small capacity
+                    language models without compromising general reasoning abilities.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Figure / Approach -->
+        <section class="section approach-section" id="methodology">
+            <h2>Methodology Overview</h2>
+            <div class="figure-container">
+                <div class="flat-figure">
+                    <div class="stage">
+                        <div class="stage-name">THOUGHT</div>
+                        <div class="stage-desc">Plan code logic</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="stage">
+                        <div class="stage-name">EXECUTE</div>
+                        <div class="stage-desc">Run initial code</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="stage">
+                        <div class="stage-name">FEEDBACK</div>
+                        <div class="stage-desc">Observe errors</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="stage highlight">
+                        <div class="stage-name">REPAIR</div>
+                        <div class="stage-desc">Autonomously fix</div>
+                    </div>
+                </div>
+            </div>
+            <p class="caption"><strong>Figure 1:</strong> Overview of the closed-loop reasoning and correction process.
+                LABD explicitly teaches models to operate within this loop by distilling the complete
+                failure-conditioned recovery trajectories.</p>
+        </section>
+
+        <!-- Citation -->
+        <section class="section citation-section" id="citation">
+            <h2>Citation</h2>
+            <div class="citation-box">
+                <pre id="bibtex-content">@article{author2024escaping,
+  title={Escaping the Reasoning Cliff: Loop-Driven Agentic Behavior Distillation for Self-Correcting Small Language Models},
+  author={First A. Author and Second B. Author and Third C. Author, Jr.},
+  journal={IEEE Access},
+  year={2024},
+  publisher={IEEE}
+}</pre>
+                <button class="copy-btn" id="copyBtn" onclick="copyCitation()">Copy</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Project page template inspired by academic publications.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
