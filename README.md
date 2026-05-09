@@ -33,7 +33,7 @@ All training was performed on a **single consumer-grade GPU** (NVIDIA T4 / L4 / 
 ## Demo
 
 <div align="center">
-  <video src="https://github.com/Moaz-Eldegwy/labd/raw/main/assets/video.mp4" controls autoplay muted loop width="100%">
+  <video src="https://moazeldegwy.com/wp-content/uploads/2026/05/video.mp4" controls autoplay muted loop width="100%">
     Your browser does not support video.
   </video>
 </div>
