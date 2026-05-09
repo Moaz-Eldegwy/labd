@@ -33,6 +33,13 @@ All training was performed on a **single consumer-grade GPU** (NVIDIA T4 / L4 / 
 ## Demo
 [![Watch the video](https://github.com/Moaz-Eldegwy/labd/blob/main/assets/ui.jpg?raw=true)](https://moazeldegwy.com/wp-content/uploads/2026/05/video.mp4)
 
+
+<div align="center">
+  <video src="assets/video.mp4" controls autoplay muted loop width="100%">
+    <p>Your browser does not support video. <a href="assets/video.mp4">Download the demo video</a>.</p>
+  </video>
+</div>
+
 ---
 
 ## Key Results
