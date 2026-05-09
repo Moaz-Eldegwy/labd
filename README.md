@@ -38,6 +38,9 @@ All training was performed on a **single consumer-grade GPU** (NVIDIA T4 / L4 / 
   </video>
 </div>
 
+<video src="assets/video.mp4" controls="controls" style="max-width: 100%;">
+</video>
+
 ---
 
 ## Key Results
