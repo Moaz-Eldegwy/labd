@@ -33,14 +33,10 @@ All training was performed on a **single consumer-grade GPU** (NVIDIA T4 / L4 / 
 ## Demo
 
 <div align="center">
-  <video src="assets/video.mp4" controls autoplay muted loop width="100%">
-    <p>Your browser does not support video. <a href="assets/video.mp4">Download the demo video</a>.</p>
+  <video src="https://github.com/Moaz-Eldegwy/labd/raw/main/assets/video.mp4" controls autoplay muted loop width="100%">
+    Your browser does not support video.
   </video>
 </div>
-
-<video src="assets/video.mp4" controls="controls" style="max-width: 100%;">
-</video>
-
 ---
 
 ## Key Results
