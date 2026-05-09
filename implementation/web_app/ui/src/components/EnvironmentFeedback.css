@@ -1,0 +1,39 @@
+.terminal-body {
+    padding: 1.0rem 1.0rem;
+    font-family: 'Fira Code', 'Roboto Mono', monospace;
+    color: var(--text-primary);
+}
+
+.terminal-line {
+    font-family: 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.command-line {
+    margin-bottom: 0.5rem;
+}
+
+.prompt-user {
+    color: #4CAF50;
+    /* Green */
+    font-weight: bold;
+}
+
+.prompt-sep {
+    color: #888;
+    margin: 0 0.3rem;
+}
+
+.command-text {
+    color: #fff;
+}
+
+.env-output {
+    margin: 0;
+    font-family: 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.85rem;
+    color: #e0e0e0;
+    white-space: pre-wrap;
+    overflow-y: visible;
+}

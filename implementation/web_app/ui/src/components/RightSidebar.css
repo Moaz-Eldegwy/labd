@@ -1,0 +1,104 @@
+.right-sidebar {
+    width: 40%;
+    min-width: 300px;
+    background: transparent;
+    /* Parent bg handles it, or transparent spacing */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    /* Flush with chat area or gap? */
+    height: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.panel-section {
+    background: #1e1e1e;
+    /* Dark background for panels as per screenshot */
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    /* Or dark border */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.code-section {
+    flex: 4;
+    /* 60% approx */
+    min-height: 0;
+}
+
+.terminal-section {
+    flex: 2;
+    /* 40% approx */
+    min-height: 0;
+}
+
+.panel-header {
+    padding: 0.75rem 1rem;
+    background: #252526;
+    /* Slightly lighter than editor bg */
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #e0e0e0;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.panel-content {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    background: #1e1e1e;
+}
+
+.panel-content.no-padding {
+    padding: 0;
+}
+
+.panel-content.terminal-content {
+    padding: 0;
+    /* EnvironmentFeedback likely has padding or we add it here */
+    background: #1e1e1e;
+}
+
+.lang-badge {
+    font-size: 0.75rem;
+    color: #858585;
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.status-badge.success {
+    background: #1a7f37;
+    color: white;
+}
+
+.status-badge.error {
+    background: #d32f2f;
+    color: white;
+}
+
+.empty-terminal {
+    padding: 1rem;
+    color: #666;
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .right-sidebar {
+        display: none;
+        /* Hide on small screens or overlay */
+    }
+}

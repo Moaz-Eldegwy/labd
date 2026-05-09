@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Claude Code / IDE
+.claude/
+.vscode/
+.idea/
+*.sw?
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Node (UI)
+ui/node_modules/
+ui/dist/
+ui/dist-ssr/
+*.local
+
+# Logs
+*.log
+logs/
+npm-debug.log*

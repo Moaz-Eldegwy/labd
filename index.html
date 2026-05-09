@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escaping the Reasoning Cliff | Research Paper</title>
+    <title>LABD: Loop-Driven Agentic Behavior Distillation</title>
     <meta name="description"
-        content="Escaping the Reasoning Cliff: Loop-Driven Agentic Behavior Distillation for Self-Correcting Small Language Models (SLMs).">
+        content="LABD teaches Small Language Models to self-correct code through failure-conditioned trajectory distillation and GRPO reinforcement learning. A graduation project by Moaz Eldegwy.">
     <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -17,34 +17,23 @@
     <main class="container">
         <!-- Hero Section -->
         <header class="hero" id="hero">
+            <div class="project-badge">Graduation Project</div>
             <h1>Escaping the Reasoning Cliff: Loop-Driven Agentic Behavior Distillation for Self-Correcting Small
                 Language Models</h1>
 
-            <div class="authors">
-                <span class="author">First A. Author<sup>1</sup></span>,
-                <span class="author">Second B. Author<sup>2</sup></span>,
-                <span class="author">Third C. Author, Jr.<sup>3</sup></span>
-            </div>
-
-            <div class="institutions">
-                <sup>1</sup>University Name, <sup>2</sup>University Name, <sup>3</sup>University Name
-            </div>
-
-            <div class="venue">To be submitted</div>
-
             <div class="action-buttons" id="action-links">
-                <a href="#" class="btn btn-primary" id="btn-pdf">
+                <a href="https://github.com/Moaz-Eldegwy/LABD" class="btn btn-primary" id="btn-github" target="_blank"
+                    rel="noopener">
                     <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
                         fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10 9 9 9 8 9"></polyline>
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
                     </svg>
-                    Paper (PDF)
+                    GitHub
                 </a>
-                <a href="#" class="btn" id="btn-models">
+                <a href="https://huggingface.co/collections/moazeldegwy/qwen3-labd" class="btn" id="btn-models"
+                    target="_blank" rel="noopener">
                     <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
                         fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path
@@ -53,9 +42,10 @@
                         <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                         <line x1="12" y1="22.08" x2="12" y2="12"></line>
                     </svg>
-                    8 LLM Models
+                    4 Models
                 </a>
-                <a href="#" class="btn" id="btn-dataset">
+                <a href="https://huggingface.co/datasets/moazeldegwy/LABD-MBPP" class="btn" id="btn-dataset"
+                    target="_blank" rel="noopener">
                     <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
                         fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
@@ -64,7 +54,8 @@
                     </svg>
                     Dataset
                 </a>
-                <a href="#" class="btn" id="btn-code">
+                <a href="https://github.com/Moaz-Eldegwy/labd/tree/main/implementation" class="btn" id="btn-code"
+                    target="_blank" rel="noopener">
                     <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2"
                         fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="16 18 22 12 16 6"></polyline>
@@ -78,35 +69,26 @@
         <!-- Abstract Section -->
         <section class="section abstract-section" id="abstract">
             <h2>Abstract</h2>
-            <div class="abstract-wrapper" style="position: relative; border-radius: 8px;">
-                <div class="coming-soon-overlay"
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: rgba(255, 255, 255, 0.5); z-index: 10; backdrop-filter: blur(2px);">
-                    <span
-                        style="background: rgba(0, 0, 0, 0.85); color: #fff; padding: 12px 24px; font-size: 1.1rem; font-weight: 500; border-radius: 6px; font-family: 'Inter', sans-serif;">Abstract
-                        pending publication</span>
-                </div>
-                <div class="content" style="filter: blur(6px); user-select: none; pointer-events: none;">
-                    <p>Small and mid-scale Language Models often struggle with iterative self-correction, exhibiting a
-                        pronounced reasoning cliff. While frontier models can recover from errors through prompting
-                        alone,
-                        smaller models frequently collapse into hallucination or fail to recover once an initial attempt
-                        is
-                        incorrect. We address this limitation with a two-stage post-training framework that teaches
-                        models
-                        not only what to generate, but how to behave within a closed-loop correction process.</p>
-                    <p>We introduce <strong>Loop-Driven Agentic Behavior Distillation (LABD)</strong>, a supervised
-                        fine-tuning paradigm that distills self-correcting trajectories rather than isolated solutions.
-                        Our
-                        data generation employs failure-induced trajectory generation, where a weak model produces
-                        error-prone candidates that are subsequently repaired by a strong teacher under explicit
-                        execution
-                        feedback. This exposes models to planning, execution, observation, and recovery, enabling them
-                        to
-                        internalize structured agentic loops.</p>
-                    <p>We further apply Group Relative Policy Optimization (GRPO) to stabilize and ground this behavior
-                        using execution-based rewards, unlocking highly robust error recovery in mid-to-small capacity
-                        language models without compromising general reasoning abilities.</p>
-                </div>
+            <div class="content">
+                <p>Small and mid-scale Language Models often struggle with iterative self-correction, exhibiting a
+                    pronounced <em>reasoning cliff</em>. While frontier models can recover from errors through prompting
+                    alone, smaller models frequently collapse into hallucination or fail to recover once an initial
+                    attempt is incorrect. We address this limitation with a two-stage post-training framework that
+                    teaches models not only <em>what</em> to generate, but <em>how to behave</em> within a closed-loop
+                    correction process.</p>
+                <p>We introduce <strong>Loop-Driven Agentic Behavior Distillation (LABD)</strong>, a supervised
+                    fine-tuning paradigm that distills <em>self-correcting trajectories</em> rather than isolated
+                    solutions. Our data generation employs <em>failure-induced trajectory generation</em>, where a weak
+                    model produces error-prone candidates that are subsequently repaired by a strong teacher under
+                    explicit execution feedback. This exposes models to planning, execution, observation, and recovery,
+                    enabling them to internalize structured agentic loops.</p>
+                <p>We further apply <strong>Group Relative Policy Optimization (GRPO)</strong> to stabilize and ground
+                    this behavior using execution-based rewards. Evaluating across four Qwen-3 model sizes (0.6B–8B) on
+                    MBPP and HumanEval, we find that supervised distillation alone instills the <em>structure</em> of
+                    self-correction even in sub-1B models, while reinforcement learning is necessary to ground recovery
+                    behavior at scale. The full benefits emerge above 4B parameters, where sufficient capacity allows
+                    learned agentic recovery behavior to generalize beyond pattern imitation. All training was performed
+                    on a single consumer-grade GPU.</p>
             </div>
         </section>
 
@@ -118,29 +100,165 @@
                     alt="Methodology Overview: Thought, Execute, Feedback, Repair"
                     style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
             </div>
-            <p class="caption"><strong>Figure 1:</strong> Overview of the closed-loop reasoning and correction process.
-                LABD explicitly teaches models to operate within this loop by distilling the complete
-                failure-conditioned recovery trajectories.</p>
+            <p class="caption"><strong>Figure 1:</strong> Overview of the LABD framework. (A) A weak student attempts a
+                task and naturally fails. (B) A strong teacher observes the failure and iteratively repairs the code
+                using execution feedback. (C) The entire trajectory (Failure → Repair) is distilled into the student,
+                teaching it <em>how</em> to recover. (D) GRPO refines this learned behavior using relative rewards.</p>
         </section>
 
-        <!-- Citation -->
-        <section class="section citation-section" id="citation">
-            <h2>Citation</h2>
-            <div class="citation-box">
-                <pre id="bibtex-content">@article{author2026escaping,
-  title={Escaping the Reasoning Cliff: Loop-Driven Agentic Behavior Distillation for Self-Correcting Small Language Models},
-  author={First A. Author and Second B. Author and Third C. Author, Jr.},
-  journal={IEEE Access},
-  year={2026},
-  publisher={IEEE}
-}</pre>
-                <button class="copy-btn" id="copyBtn" onclick="copyCitation()">Copy</button>
+        <!-- Results Section -->
+        <section class="section results-section" id="results">
+            <h2>Results</h2>
+            <p class="results-intro">Models are evaluated as autonomous self-correcting agents under a closed-loop
+                protocol: <code>THOUGHT → EXECUTE → FEEDBACK → REPAIR</code>. Pass@3 measures the fraction of tasks
+                solved within 3 iterative attempts with execution feedback.</p>
+
+            <h3>MBPP (500 tasks)</h3>
+            <div class="table-wrapper">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Base (Pass@1)</th>
+                            <th>LABD (Pass@3)</th>
+                            <th>LABD+GRPO (Pass@3)</th>
+                            <th>Correction Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Qwen3-0.6B</td>
+                            <td>36.60%</td>
+                            <td>33.94%</td>
+                            <td>36.80%</td>
+                            <td>8.9%</td>
+                        </tr>
+                        <tr>
+                            <td>Qwen3-1.7B</td>
+                            <td>55.40%</td>
+                            <td>46.40%</td>
+                            <td>52.60%</td>
+                            <td>16.6%</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>Qwen3-4B</td>
+                            <td>58.20%</td>
+                            <td>69.80%</td>
+                            <td><strong>72.40%</strong></td>
+                            <td>34.3%</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>Qwen3-8B</td>
+                            <td>69.80%</td>
+                            <td>74.80%</td>
+                            <td><strong>75.80%</strong></td>
+                            <td>36.3%</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+
+            <h3>HumanEval (164 tasks)</h3>
+            <div class="table-wrapper">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Base (Pass@1)</th>
+                            <th>LABD (Pass@3)</th>
+                            <th>LABD+GRPO (Pass@3)</th>
+                            <th>Gain vs Base</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Qwen3-0.6B</td>
+                            <td>31.00%</td>
+                            <td>25.00%</td>
+                            <td>25.61%</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Qwen3-1.7B</td>
+                            <td>52.70%</td>
+                            <td>47.56%</td>
+                            <td>60.37%</td>
+                            <td>+7.7 pp</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>Qwen3-4B</td>
+                            <td>62.00%</td>
+                            <td>79.27%</td>
+                            <td><strong>82.32%</strong></td>
+                            <td><strong>+20.3 pp</strong></td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>Qwen3-8B</td>
+                            <td>67.65%</td>
+                            <td>87.80%</td>
+                            <td><strong>87.20%</strong></td>
+                            <td><strong>+20.1 pp</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="caption">Rows highlighted in blue indicate models where the agentic loop provides a net positive
+                gain over the base model — the capacity threshold above which LABD is most effective.</p>
         </section>
+
+        <!-- Model Zoo -->
+        <section class="section models-section" id="models">
+            <h2>Model Zoo</h2>
+            <p>All models are available on Hugging Face. They are fine-tuned from Qwen3 base checkpoints using LABD SFT
+                followed by GRPO.</p>
+            <div class="table-wrapper">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Parameters</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Qwen3-0.6B-LABD-GRPO</td>
+                            <td>0.6B</td>
+                            <td><a href="https://huggingface.co/moazeldegwy/Qwen3-0.6B-LABD-GRPO" target="_blank"
+                                    rel="noopener">🤗 View on HF</a></td>
+                        </tr>
+                        <tr>
+                            <td>Qwen3-1.7B-LABD-GRPO</td>
+                            <td>1.7B</td>
+                            <td><a href="https://huggingface.co/moazeldegwy/Qwen3-1.7B-LABD-GRPO" target="_blank"
+                                    rel="noopener">🤗 View on HF</a></td>
+                        </tr>
+                        <tr>
+                            <td>Qwen3-4B-LABD-GRPO</td>
+                            <td>4B</td>
+                            <td><a href="https://huggingface.co/moazeldegwy/Qwen3-4B-LABD-GRPO" target="_blank"
+                                    rel="noopener">🤗 View on HF</a></td>
+                        </tr>
+                        <tr>
+                            <td>Qwen3-8B-LABD-GRPO</td>
+                            <td>8B</td>
+                            <td><a href="https://huggingface.co/moazeldegwy/Qwen3-8B-LABD-GRPO" target="_blank"
+                                    rel="noopener">🤗 View on HF</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="margin-top: 1rem;"><a href="https://huggingface.co/collections/moazeldegwy/qwen3-labd"
+                    target="_blank" rel="noopener">→ View full collection on Hugging Face</a></p>
+        </section>
+
     </main>
 
     <footer class="footer">
-        <p>Project page template inspired by academic publications.</p>
+        <p>LABD — Graduation Project &nbsp;·&nbsp; <a href="https://github.com/Moaz-Eldegwy/LABD" target="_blank"
+                rel="noopener">GitHub</a> &nbsp;·&nbsp; <a
+                href="https://huggingface.co/collections/moazeldegwy/qwen3-labd" target="_blank" rel="noopener">Hugging
+                Face</a></p>
     </footer>
 
     <script src="assets/js/main.js"></script>
