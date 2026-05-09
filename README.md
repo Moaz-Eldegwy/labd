@@ -6,11 +6,11 @@
 [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-LABD--MBPP-blue)](https://huggingface.co/datasets/moazeldegwy/LABD-MBPP)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![Project Page](https://img.shields.io/badge/Project-Page-blueviolet)](https://moaz-eldegwy.github.io/LABD/)
+[![Project Page](https://img.shields.io/badge/Project-Page-blueviolet)](https://moaz-eldegwy.github.io/labd/)
 
 **Graduation Project — Computer Science & AI**
 
-[🌐 Project Page](https://moaz-eldegwy.github.io/LABD/) • [🤗 Models](https://huggingface.co/collections/moazeldegwy/qwen3-labd) • [📊 Dataset](https://huggingface.co/datasets/moazeldegwy/LABD-MBPP)
+[🌐 Project Page](https://moaz-eldegwy.github.io/labd/) • [🤗 Models](https://huggingface.co/collections/moazeldegwy/qwen3-labd) • [📊 Dataset](https://huggingface.co/datasets/moazeldegwy/LABD-MBPP)
 
 </div>
 
