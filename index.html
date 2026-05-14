@@ -176,7 +176,7 @@
                             <td>31.00%</td>
                             <td>25.00%</td>
                             <td>25.61%</td>
-                            <td>—</td>
+                            <td>−5.4 pp</td>
                         </tr>
                         <tr>
                             <td>Qwen3-1.7B</td>
@@ -202,8 +202,10 @@
                     </tbody>
                 </table>
             </div>
-            <p class="caption">Rows highlighted in blue indicate models where the agentic loop provides a net positive
-                gain over the base model — the capacity threshold above which LABD is most effective.</p>
+            <p class="caption">Highlighted rows indicate models where the agentic loop provides a net positive
+                gain over the base model. We observe a capacity threshold around 4B parameters: below it, distilled
+                self-correction is harder to ground, and the 0.6B model shows a small regression on HumanEval. We
+                discuss this trade-off in the README.</p>
         </section>
 
         <!-- Model Zoo -->
@@ -250,6 +252,24 @@
             </div>
             <p style="margin-top: 1rem;"><a href="https://huggingface.co/collections/moazeldegwy/qwen3-labd"
                     target="_blank" rel="noopener">→ View full collection on Hugging Face</a></p>
+        </section>
+
+        <!-- Citation -->
+        <section class="section citation-section" id="citation">
+            <h2>Citation</h2>
+            <div class="citation-wrapper"
+                style="position: relative; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1.25rem 1.5rem; margin-top: 1rem;">
+                <button id="copyBtn" onclick="copyCitation()"
+                    style="position: absolute; top: 0.75rem; right: 0.75rem; padding: 0.35rem 0.75rem; font-size: 0.85rem; background: #ffffff; border: 1px solid #d1d5db; color: #374151; border-radius: 6px; cursor: pointer; font-family: inherit;">Copy</button>
+                <pre id="bibtex-content"
+                    style="margin: 0; padding-right: 4rem; overflow-x: auto; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.85rem; line-height: 1.5; color: #1f2937; white-space: pre-wrap; word-break: break-word;">@misc{eldegwy2026labd,
+  title        = {Loop-Driven Agentic Behavior Distillation for Self-Correcting Code Generation},
+  author       = {Moaz Eldegwy},
+  year         = {2026},
+  howpublished = {\url{https://github.com/Moaz-Eldegwy/LABD}},
+  note         = {Graduation Project}
+}</pre>
+            </div>
         </section>
 
     </main>

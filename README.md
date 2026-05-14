@@ -57,7 +57,7 @@ All training was performed on a **single consumer-grade GPU** (NVIDIA T4 / L4 / 
 
 | Model | Base (Pass@1) | LABD (Pass@3) | LABD+GRPO (Pass@3) | Gain vs Base |
 |:------|:---:|:---:|:---:|:---:|
-| Qwen3-0.6B | 31.00% | 25.00% | **25.61%** | — |
+| Qwen3-0.6B | 31.00% | 25.00% | **25.61%** | −5.4 pp |
 | Qwen3-1.7B | 52.70% | 47.56% | **60.37%** | +7.7 pp |
 | Qwen3-4B | 62.00% | 79.27% | **82.32%** | **+20.3 pp** |
 | Qwen3-8B | 67.65% | 87.80% | **87.20%** | **+20.1 pp** |
