@@ -69,25 +69,28 @@
         <section class="section abstract-section" id="abstract">
             <h2>Abstract</h2>
             <div class="content">
-                <p>Small and mid-scale Language Models often struggle with iterative self-correction, exhibiting a
-                    pronounced <em>reasoning cliff</em>. While frontier models can recover from errors through prompting
-                    alone, smaller models frequently collapse into hallucination or fail to recover once an initial
-                    attempt is incorrect. We address this limitation with a two-stage post-training framework that
-                    teaches models not only <em>what</em> to generate, but <em>how to behave</em> within a closed-loop
-                    correction process.</p>
-                <p>We introduce <strong>Loop-Driven Agentic Behavior Distillation (LABD)</strong>, a supervised
-                    fine-tuning paradigm that distills <em>self-correcting trajectories</em> rather than isolated
-                    solutions. Our data generation employs <em>failure-induced trajectory generation</em>, where a weak
-                    model produces error-prone candidates that are subsequently repaired by a strong teacher under
-                    explicit execution feedback. This exposes models to planning, execution, observation, and recovery,
-                    enabling them to internalize structured agentic loops.</p>
-                <p>We further apply <strong>Group Relative Policy Optimization (GRPO)</strong> to stabilize and ground
-                    this behavior using execution-based rewards. Evaluating across four Qwen-3 model sizes (0.6B–8B) on
-                    MBPP and HumanEval, we find that supervised distillation alone instills the <em>structure</em> of
-                    self-correction even in sub-1B models, while reinforcement learning is necessary to ground recovery
-                    behavior at scale. The full benefits emerge above 4B parameters, where sufficient capacity allows
-                    learned agentic recovery behavior to generalize beyond pattern imitation. All training was performed
-                    on a single consumer-grade GPU.</p>
+                <p>Small and mid-scale language models frequently fail to revise an incorrect first attempt.
+                    Prompting-based self-correction presupposes a latent self-critique ability that these models often do
+                    not possess, while reinforcement learning applied directly at small scale tends to be unstable.</p>
+                <p>We present <strong>Loop-Driven Agentic Behavior Distillation (LABD)</strong>, a two-stage
+                    post-training procedure that treats self-correction as a behavior to be <em>taught</em> rather than
+                    an ability to be <em>elicited</em>. In the first stage, each student model operates inside a closed
+                    execution loop and generates complete agent trajectories consisting of reasoning, execution,
+                    feedback, and, when necessary, recovery. Some trajectories succeed immediately, while others require
+                    one or more repair steps. A stronger teacher, conditioned as the author of the trajectory, intervenes
+                    only when recovery is needed and produces corrected actions under sandbox feedback. The resulting
+                    execution-grounded trajectories are then distilled back into the same model through supervised
+                    fine-tuning. In the second stage, <strong>Group Relative Policy Optimization (GRPO)</strong> grounds
+                    the learned behavior using execution-based rewards.</p>
+                <p>Evaluating four Qwen3 sizes (0.6B–8B) on MBPP and HumanEval under an iterative execution-feedback
+                    protocol, we find that the agentic loop produces a net improvement over single-pass generation at
+                    every scale, with third-iteration gains over the base model of approximately +10 to +20 percentage
+                    points (pp) on MBPP and +5 to +25 pp on HumanEval. Recovery from failure tends to increase with model
+                    capacity rather than appearing only beyond a fixed size, and the additional inference cost of the loop
+                    is modest (×1.08–×1.38 in generated tokens). All training was performed on a single mid-range GPU
+                    using a few hundred distilled trajectories per model. These results indicate that self-correction in
+                    small models is best obtained by teaching the behavior directly from a model's own failures, rather
+                    than by prompting for it or discovering it through reinforcement learning alone.</p>
             </div>
         </section>
 
@@ -99,10 +102,11 @@
                     alt="Methodology Overview: Thought, Execute, Feedback, Repair"
                     style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
             </div>
-            <p class="caption"><strong>Figure 1:</strong> Overview of the LABD framework. (A) A weak student attempts a
-                task and naturally fails. (B) A strong teacher observes the failure and iteratively repairs the code
-                using execution feedback. (C) The entire trajectory (Failure → Repair) is distilled into the student,
-                teaching it <em>how</em> to recover. (D) GRPO refines this learned behavior using relative rewards.</p>
+            <p class="caption"><strong>Figure 1: The LABD Framework — Turning Failure into Signal.</strong> (A) A
+                student attempts a task and fails, producing an error trace. (B) A teacher, conditioned as the author of
+                the failed attempt, repairs the code using execution feedback. (C) The corrected trajectory is distilled
+                back into the same student, teaching it <em>how</em> to recover. (D) GRPO then grounds this learned
+                behavior using execution-based rewards.</p>
         </section>
 
         <!-- Results Section -->
