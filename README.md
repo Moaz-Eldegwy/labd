@@ -16,7 +16,7 @@
 
 ---
 
-> 🔒 **This work is currently under review.** The full implementation (training, evaluation, and demo code), datasets, and model checkpoints will be made **publicly available upon publication.** This page describes the method and what will be released.
+> 🔬 **This work is currently under review.** The full implementation — data generation, training, and evaluation notebooks — is available in this repository (see [Repository Structure](#repository-structure)). The trained **model checkpoints and datasets** will be released on Hugging Face **upon publication.**
 
 ---
 
@@ -54,6 +54,27 @@ All training was performed on a **single consumer-grade GPU** (NVIDIA T4 / L4 / 
 **Phase 1 — SFT:** Distills the *structure* of self-correction into the model using failure-conditioned trajectories. Even sub-1B models learn to retry, maintain coherence across turns, and respond to execution feedback.
 
 **Phase 2 — GRPO:** Stabilizes and grounds the learned behavior using execution-based rewards (+3.0 for passing tests, −2.0 for hallucinating feedback). Operates in a *behavior refinement* regime rather than behavior discovery.
+
+---
+
+## Repository Structure
+
+The `implementation/` directory contains the full pipeline as Jupyter notebooks, organized by stage. Each notebook runs end-to-end on a single GPU; the examples are configured for the Qwen3-0.6B student and scale up by swapping the model id.
+
+```
+implementation/
+├── data_generation/
+│   ├── sft_self_correction_dataset_generation.ipynb   # Stage 1: student fails, teacher repairs → SFT trajectories
+│   └── grpo_rollout_generation_and_dataset_creation.ipynb  # Stage 3: roll out the SFT model → recovery-only GRPO data
+├── training/
+│   ├── labd_sft_training.ipynb                         # Stage 2: distill trajectories back into the student (SFT)
+│   └── labd_grpo_training.ipynb                        # Stage 4: GRPO with execution-based rewards
+└── evaluation/
+    ├── agentic_loop_evaluation.ipynb                   # Stage 5: closed-loop eval on MBPP / HumanEval
+    └── evaluation_analysis.ipynb                       # Stage 6: aggregate pass@k, Δbase, and correction rate
+```
+
+The agent operates over a structured loop — `<think>` reasoning, `<execute>` code, and `<tool_response>` execution feedback from the sandbox — across up to three iterations.
 
 ---
 
@@ -127,4 +148,4 @@ If you find this work useful, please cite:
 
 ## License
 
-The code and artifacts will be released under an open-source license upon publication.
+The code in this repository is shared for review and reproducibility. A final open-source license will be applied to the code, model checkpoints, and datasets upon publication.
